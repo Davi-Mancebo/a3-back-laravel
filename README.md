@@ -23,12 +23,13 @@ https://github.com/Davi-Mancebo/a3-back-laravel.git
 cd seu-repositorio
 ```
 ### **2. Instale as Dependências do Composer**
+crie o arquivo .env e adicione os valores da tabela abaixo
 ```
 .env.example
 ```
 Atualize as informações no .env:
 ```
-DB_CONNECTION=mysql // nome_do_banco
+DB_CONNECTION=mysql // mysql ou mariadb
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=nome_do_banco
@@ -40,8 +41,12 @@ DB_PASSWORD=senha
 ```
 php artisan key:generate
 ```
+### **5. Faça a migração das tabelas para o seu banco de dados**
+```
+php artisan migrate
+```
 
-### **5. Executar o Servidor**
+### **6. Executar o Servidor**
 Após a configuração, inicie o servidor local:
 ```
 php artisan serve
@@ -74,4 +79,5 @@ DELETE /enrollments/{id} - Remove uma matrícula.
 php artisan migrate:reset
 php artisan migrate
 ```
-
+___
+Agora o seu projeto estará funcionando ❤
