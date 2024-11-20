@@ -1,4 +1,4 @@
-# **Setup do Projeto de Gerenciamento de Clientes e Matrículas**
+# **Setup do Projeto da Clinica Unicuritiba**
 
 ## **Descrição**
 Este script realiza toda a configuração necessária para rodar o projeto Laravel localmente.
