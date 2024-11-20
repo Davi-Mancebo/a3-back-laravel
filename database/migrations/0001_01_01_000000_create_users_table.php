@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('ra')->unique();
             $table->string('password');
+            $table->enum('type', ['A', 'B', 'C']);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,10 +30,11 @@ return new class extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->longText('payload');
-            $table->integer('last_activity')->index();
+            $table->string('ip_address', length: 45)->nullable();
+            $table->timestamp('last_activity')->nullable();
+            $table->text('payload')->nullable(); // Adicionando a coluna payload
+            $table->string('user_agent')->nullable(); // Adiciona a coluna 'user_agent'
+
         });
     }
 
@@ -44,6 +45,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('sessions');   
     }
 };
