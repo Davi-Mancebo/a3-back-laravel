@@ -6,6 +6,8 @@ use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
 use App\Models\Clients;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
+
 
 class ClientsController extends Controller
 {

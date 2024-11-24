@@ -7,6 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clients extends Model
 {
-    /** @use HasFactory<\Database\Factories\ClientsFactory> */
     use HasFactory;
+
+    /**
+     * Os atributos que podem ser atribuídos em massa.
+     */
+    protected $fillable = [
+        'name', // Adicione aqui
+        'cellphone',
+        'date_birth',
+        'gender',
+        'email',
+        'SOS_phone',
+        'scholarship',
+        'work',
+        'special_cases',
+    ];
 }

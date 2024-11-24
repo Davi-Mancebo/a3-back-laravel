@@ -9,4 +9,13 @@ class ClientsEnrollment extends Model
 {
     /** @use HasFactory<\Database\Factories\ClientsEnrollmentFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+    ];
 }
