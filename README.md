@@ -66,7 +66,8 @@ DELETE /clients/{id} - Remove um cliente.
 
 ```
 GET /enrollments - Lista todas as matrículas.
-GET /enrollments/{id} - Retorna uma matrícula específica.
+GET /enrollments/client/{id} - Retorna todas as consultas do cliente.
+GET /enrollments/student/{id} - Retorna os clientes dos alunos.
 POST /enrollments - Cria uma nova matrícula.
 PUT /enrollments/{id} - Atualiza uma matrícula.
 DELETE /enrollments/{id} - Remove uma matrícula.
