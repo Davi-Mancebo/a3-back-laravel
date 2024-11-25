@@ -10,8 +10,14 @@ Route::get('/test', function () {
 });
 
 // User
+Route::get('/user', [UserController::class,'getUsers'])->name('user.index');
+Route::get('/user/{id}', [UserCOntroller::class, 'getUserById'])->name('user.show');
 Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
-Route::post('/user/login', [UserController::class, 'login'])->name('user.login');
+Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
+Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
+//auth
+Route::post('/login', [UserController::class, 'login'])->name('auth.store');
 
 // clients
 Route::get('/client', [ClientsController::class, 'getClients'])->name('client.index');
